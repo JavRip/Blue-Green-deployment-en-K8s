@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment
+  namespace: blue-green-deployment
+  labels:
+    app: example-app
+    env: green
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: example-app
+      env: green
+  template:
+    metadata:
+      labels:
+        app: example-app
+        env: green
+    spec:
+      containers:
+      - name: example-container
+        image: nginx:1.21-alpine
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
