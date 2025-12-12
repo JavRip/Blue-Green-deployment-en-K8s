@@ -10,8 +10,13 @@ Este proyecto implementa una estrategia de **Blue-Green Deployment** en un clús
 
 ## 📁 Estructura del proyecto
 Blue-Green-deployment-en-K8s/
+
 ├── namespace.yaml
+
 ├── bluedeployment.yaml
+
 ├── greendeployment.yaml
+
 ├── service.yaml
+
 └── README.md
